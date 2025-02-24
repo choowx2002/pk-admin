@@ -1,13 +1,13 @@
-import { Power } from "./constant";
+import { PowerType } from "./constant";
 
 export interface PowerCost {
-  rune: Power[];
+  rune: PowerType[];
   count: number;
 }
 
 export interface PayCost {
-  energy?: number;
-  power?: PowerCost;
+  energy: number;
+  power: PowerCost;
 }
 
 export type AbilityCostFrom = "trash" | "hand" | "deck-bottom" | "self";

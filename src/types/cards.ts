@@ -17,11 +17,11 @@ export interface RuneCard extends BaseCard {
 
 export interface UnitCard extends BaseCard {
   type: "Unit";
-  faction?: string[];
-  might?: number;
-  abilities?: Ability[];
-  keywords?: Keyword[];
-  cost?: PayCost;
+  faction: string[];
+  might: number;
+  abilities: Ability[];
+  keywords: Keyword[];
+  cost: PayCost;
 }
 
 export interface SpellCard extends BaseCard {

@@ -1,5 +1,3 @@
-import { PayCost, CardCost } from "./cost";
-
 /**
  * Keywords represent different abilities or effects that can be applied to units in the game.
  * Each keyword modifies the behavior of a unit in a specific way during gameplay.
@@ -15,20 +13,21 @@ import { PayCost, CardCost } from "./cost";
  * - Hidden: Allows a card to be played face-down in a conquered battlefield and activated later for a rune cost.
  * - Reaction: Can only be played in response to other spells or abilities.
  */
-export type Keywords =
-  | "Accelerate"
-  | "Assault"
-  | "Ganking"
-  | "Deathknell"
-  | "Tank"
-  | "Deflect"
-  | "Shield"
-  | "Legion"
-  | "Hidden"
-  | "Reaction";
+export const KeywordList = [
+  "Accelerate",
+  "Assault",
+  "Ganking",
+  "Deathknell",
+  "Tank",
+  "Deflect",
+  "Shield",
+  "Legion",
+  "Hidden",
+  "Reaction",
+] as const;
 
+export type KeywordType = typeof KeywordList[number]
 export interface Keyword {
-  name: Keywords;
+  name: KeywordType;
   level: number;
-  cost: PayCost | CardCost | null;
 }

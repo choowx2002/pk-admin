@@ -6,7 +6,7 @@ import axios from "axios";
 export default function CardsPage() {
     const [cards, setCards] = useState<any>([]);
     const [form, setForm] = useState({ name: "", type: "Unit", cost: 0 });
-
+    const [loading, setLoading] = useState(true);
     // 获取卡牌列表
     useEffect(() => {
         console.log("✅ API 请求触发");
@@ -15,6 +15,7 @@ export default function CardsPage() {
                 setCards(res.data.res);
             }
         });
+        setLoading(false);
     }, []);
 
     // 提交表单
@@ -23,7 +24,7 @@ export default function CardsPage() {
         await axios.post("http://localhost:4000/cards", form);
         setForm({ name: "", type: "Unit", cost: 0 });
     };
-
+    if (loading) return <p>Loading...</p>;
     return (
         <div className="p-4 bg-slate-600 shadow rounded-lg">
             <h1 className="text-2xl font-bold mb-4">卡牌管理</h1>

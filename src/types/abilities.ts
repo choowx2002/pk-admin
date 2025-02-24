@@ -8,20 +8,24 @@ import { Keyword } from "./keywords";
  */
 export type AbilityCost = PayCost | CardCost;
 
-export type Trigger =
-  | "onPlay"
-  | "onConquer"
-  | "onScore"
-  | "exhaust"
-  | "recycle"
-  | "activate"
-  | "onPlayUnit"
-  | "none";
+export const Triggers =[
+  "onPlay",
+  "onConquer",
+  "onScore",
+  "exhaust",
+  "recycle",
+  "activate",
+  "onPlayUnit",
+  "none",
+] as const;
+  
+export type Trigger = typeof Triggers[number];
 
 export interface Condition {
   attribute: string;
   operator: ">=" | ">" | "<=" | "<" | "==" | "!=";
-  value: number;
+  value: number | string | boolean;
+  attribute2?: string;
 }
 
 export interface EffectAction {
@@ -31,11 +35,10 @@ export interface EffectAction {
 }
 
 export interface Ability {
-  keywords: Keyword[];
-  description?: string;
-  trigger?: Trigger;
-  conditions?: Condition[];
-  cost?: AbilityCost[] | null;
-  effects?: EffectAction[];
+  description: string;
+  trigger: Trigger;
+  conditions: Condition[];
+  cost: AbilityCost[];
+  effects: EffectAction[];
   repeatable?: boolean;
 }

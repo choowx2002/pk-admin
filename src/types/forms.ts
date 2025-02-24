@@ -1,6 +1,6 @@
 import { CardTypes } from "./constant";
 
-type FieldType = "text" | "number" | "select" | "radio" | "textfield"
+type FieldType = "text" | "number" | "select" | "radio" | "textfield" | "abilities" | "keywords" | "multiTagInput" | "payCost"
 
 interface FieldOption {
     label: string;
@@ -51,4 +51,40 @@ export const BaseCardForm: Field[] = [
         }),
         required: true
     },
+]
+
+export const RuneCardForm: Field[] = [
+    {
+        label: "Abilities",
+        name: "abilities",
+        type: "abilities",
+    }
+]
+
+export const UnitCardForm: Field[] = [
+    {
+        label: "Abilities",
+        name: "abilities",
+        type: "abilities",
+    },
+    {
+        label: "Faction",
+        name: "faction",
+        type: "multiTagInput",
+    },
+    {
+        label: "Might",
+        name: "might",
+        type: "number",
+    },
+    {
+        label: "Keywords",
+        name: "keywords",
+        type: "keywords",
+    },
+    {
+        label: "Cost",
+        name: "cost",
+        type: "payCost",
+    }
 ]
