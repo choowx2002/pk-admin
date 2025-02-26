@@ -13,15 +13,17 @@ export default function CardsPage() {
                 const res = await fetch("cards.json");
                 const data = await res.json();
                 console.log(data);
-                setCards((data as Card[]).sort((a, b) => {
-                    if (a.name < b.name) {
-                        return -1;
-                    }
-                    if (a.name > b.name) {
-                        return 1;
-                    }
-                    return 0;
-                }));
+                setCards((data as Card[])
+                // .sort((a, b) => {
+                //     if (a.name < b.name) {
+                //         return -1;
+                //     }
+                //     if (a.name > b.name) {
+                //         return 1;
+                //     }
+                //     return 0;
+                // })
+            );
             } catch (err) {
                 console.log("err", err);
             } finally {
