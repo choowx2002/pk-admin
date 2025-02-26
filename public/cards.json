@@ -1,0 +1,1589 @@
+[
+    {
+        "cardId": "ARC-001/006",
+        "imgSrc": "A001.jpg",
+        "name": "Vi",
+        "type": "Champion",
+        "title": "Destructive",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": ["Fury"],
+                "count": 1
+            }
+        },
+        "might": 3,
+        "description": "Ganking (I can move from battlefield to battlefield)\nRecycle 1 from your trash: Give me +1 might this turn.",
+        "faction": ["Piltover"],
+        "keywords": [
+            {
+                "name": "Ganking",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "ARC-002/006",
+        "imgSrc": "A002.jpg",
+        "name": "Caitlyn",
+        "type": "Champion",
+        "title": "Sharpshooter",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Calm"],
+                "count": 1
+            }
+        },
+        "might": 3,
+        "description": "I take damage last in combat.\nExhaust me: If I m on the battlefield, deal damge equal to my might to an enemy unit on any battlefield",
+        "faction": ["Piltover"],
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "ARC-003/006",
+        "imgSrc": "A003.jpg",
+        "name": "Heimerdinger",
+        "type": "Champion",
+        "title": "Professor",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Mental"],
+                "count": 1
+            }
+        },
+        "might": 3,
+        "description": "I have all the Exhaust me abilities of all friendly Legends, Units, and Gear cards in play.",
+        "faction": ["Bandle City","Piltover"],
+        "runeColor": ["Mental"]
+    },
+    {
+        "cardId": "ARC-004/006",
+        "imgSrc": "A004.jpg",
+        "name": "Warwick",
+        "type": "Champion",
+        "title": "Feral",
+        "cost": {
+            "energy": 6,
+            "power": {
+                "rune": ["Physical"],
+                "count": 1
+            }
+        },
+        "might": 5,
+        "description": "I enter ready. When attacking, destroy all damaged enemy units here",
+        "faction": ["Zaun","Dog"],
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "ARC-005/006",
+        "imgSrc": "A005.jpg",
+        "name": "Jinx",
+        "type": "Champion",
+        "title": "Rebel",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "might": 5,
+        "description": "When you discard one or more cards, ready me and give me +1 might this turn.",
+        "faction": ["Zaun"],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "ARC-006/006",
+        "imgSrc": "A006.jpg",
+        "name": "Viktor",
+        "type": "Champion",
+        "title": "Leader",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": ["Order"],
+                "count": 1
+            }
+        },
+        "might": 4,
+        "faction": ["Zaun"],
+        "description": "When another non-Recruit unit you control dies, play a 1 Might Recruit unit token into your base.",
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-001/298",
+        "imgSrc": "001.jpg",
+        "name": "Blazing Scorcher",
+        "type": "Unit",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 5,
+        "description": "Accelerate (As I'm played, you may pay 1 Energy 1 Fury Power as an additional cost to have me enter ready.)",
+        "faction": ["Noxus", "Dragon"],
+        "keywords": [
+            {
+                "name": "Accelerate",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-002/298",
+        "imgSrc": "002.jpg",
+        "name": "Brazen Buccaneer",
+        "type": "Unit",
+        "cost": {
+            "energy": 6,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 5,
+        "description": "As you play me, you may discard a card as an additional cost. If you do, reduce my cost by 2 Energy.",
+        "faction": ["Bilgewater", "Pirate"],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-003/298",
+        "imgSrc": "003.jpg",
+        "name": "Chemtech Enforcer",
+        "type": "Unit",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 2,
+        "description": "Assault 2 (+2 might while I'm an attacker.)\nWhen you play me, discard 1.",
+        "faction": ["Zaun"],
+        "keywords": [
+            {
+                "name": "Assault",
+                "level": 2
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-005/298",
+        "imgSrc": "005.jpg",
+        "name": "Disintegrate",
+        "type": "Spell",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Deal 3 to a unit at a battlefield. If this kills it, draw 1.",
+        "faction": [],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-006/298",
+        "imgSrc": "006.jpg",
+        "name": "Flame Chompers",
+        "type": "Unit",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 3,
+        "description": "When you discard me, you may pay 1 Fury Power to play me.",
+        "faction": ["Zaun"],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-007/298",
+        "imgSrc": "007.jpg",
+        "name": "Fury Rune",
+        "type": "Rune",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Exhaust me: add 1 Energy. Recycle me: add 1 Fury Power. Activate this any time.",
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-009/298",
+        "imgSrc": "009.jpg",
+        "name": "Legion Rearguard",
+        "type": "Unit",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 2,
+        "description": "Accelerate (As I'm played, you may pay 1 Energy 1 Fury Power as an additional cost to have me enter ready.)",
+        "faction": ["Noxus", "Trifarian"],
+        "keywords": [
+            {
+                "name": "Accelerate",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-010/298",
+        "imgSrc": "010.jpg",
+        "name": "Magma Wurm",
+        "type": "Unit",
+        "cost": {
+            "energy": 8,
+            "power": {
+                "rune": ["Fury"],
+                "count": 1
+            }
+        },
+        "might": 8,
+        "description": "Other friendly units enter ready.",
+        "faction": ["Freljord"],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-012/298",
+        "imgSrc": "012.jpg",
+        "name": "Noxus Hopeful",
+        "type": "Unit",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 3,
+        "description": "Legion (I cost 1 Energy less. Gain this effect if you've played another card this turn.)",
+        "faction": ["Noxus", "Trifarian"],
+        "keywords": [
+            {
+                "name": "Legion",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-021/298",
+        "imgSrc": "021.jpg",
+        "name": "Scrapyard Champion",
+        "type": "Unit",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": ["Fury"],
+                "count": 1
+            }
+        },
+        "might": 5,
+        "description": "Legion: When you play me, discard 2 then draw 2. (Get the effect if you've played another card this turn.)",
+        "faction": ["Bandle City", "Mech"],
+        "keywords": [
+            {
+                "name": "Legion",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-031/298",
+        "imgSrc": "031.jpg",
+        "name": "Jinx",
+        "type": "Champion",
+        "title": "Demolitionist",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Fury"],
+                "count": 1
+            }
+        },
+        "might": 4,
+        "description": "Accelerate, Assault 2 (As I'm played, you may pay 1 Energy 1 Fury Power as an additional cost to have me enter ready. +2 might while I'm an attacker.) When you play me, discard 2.",
+        "faction": ["Zaun"],
+        "keywords": [
+            {
+                "name": "Accelerate",
+                "level": 1
+            },
+            {
+                "name": "Assault",
+                "level": 2
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-034/298",
+        "imgSrc": "034.jpg",
+        "name": "Tryndamere",
+        "type": "Champion",
+        "title": "Barbarian",
+        "cost": {
+            "energy": 7,
+            "power": {
+                "rune": ["Fury"],
+                "count": 2
+            }
+        },
+        "might": 8,
+        "description": "When I conquer after an attack, if you assigned 5 or more excess damage to opponent's units, you score 1 Point.",
+        "faction": ["Freljord", "Barbarian"],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-036/298",
+        "imgSrc": "036.jpg",
+        "name": "Vi",
+        "type": "Champion",
+        "title": "Destructive",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": ["Fury"],
+                "count": 1
+            }
+        },
+        "might": 3,
+        "description": "Ganking (I can move from battlefield to battlefield)\nRecycle 1 from your trash: Give me +1 might this turn.",
+        "faction": ["Piltover"],
+        "keywords": [
+            {
+                "name": "Ganking",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-038/298",
+        "imgSrc": "038.jpg",
+        "name": "Kadregrin the Infernal",
+        "type": "Unit",
+        "cost": {
+            "energy": 9,
+            "power": {
+                "rune": ["Fury"],
+                "count": 2
+            }
+        },
+        "might": 9,
+        "description": "When you play me, draw 1 for each of your units with 5 might or more.",
+        "faction": ["Demacia", "Dragon"],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-040/298",
+        "imgSrc": "040.jpg",
+        "name": "Seal of Fury",
+        "type": "Gear",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": ["Fury"],
+                "count": 1
+            }
+        },
+        "description": "Exhaust me: Add 1 Fury. Activate this any time.",
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-041/298",
+        "imgSrc": "041.jpg",
+        "name": "Volibear",
+        "type": "Champion",
+        "title": "Furious",
+        "cost": {
+            "energy": 10,
+            "power": {
+                "rune": ["Fury"],
+                "count": 2
+            }
+        },
+        "might": 9,
+        "description": "Deflect 2 (Opponents must pay 2 to choose me with a spell or effect.) When I attack, deal 5 damage split among any number of enemy units here.",
+        "faction": ["Freljord"],
+        "keywords": [
+            {
+                "name": "Deflect",
+                "level": 2
+            }
+        ],
+        "runeColor": ["Fury"]
+    },
+    {
+        "cardId": "FND-042/298",
+        "imgSrc": "042.jpg",
+        "name": "Calm Rune",
+        "type": "Rune",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Exhaust me: add 1 Energy. Recycle me: add 1 Calm Power. Activate this any time.",
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-044/298",
+        "imgSrc": "044.jpg",
+        "name": "Clockwork Keeper",
+        "type": "Unit",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 2,
+        "description": "As you play me, you may pay 1 Calm Power as an additional cost. If you do, draw 1.",
+        "faction": ["Shurima"],
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-045/298",
+        "imgSrc": "045.jpg",
+        "name": "Defy",
+        "type": "Spell",
+        "cost": {
+            "energy": 1,
+            "power": {
+                "rune": ["Calm"],
+                "count": 1
+            }
+        },
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "description": "Reaction (This may be played in response to another spell or ability.) Counter a spell that costs no more than 4 Energy and no more than 1 Rune Power.",
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-046/298",
+        "imgSrc": "046.jpg",
+        "name": "En Garde",
+        "type": "Spell",
+        "cost": {
+            "energy": 1,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "description": "Reaction (This may be played in response to another spell or ability.) Give a friendly unit +1 might, then an additional +1 might if it is the only unit you control there.",
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-048/298",
+        "imgSrc": "048.jpg",
+        "name": "Meditation",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "description": "Reaction (This may be played in response to another spell or ability.) As an additional cost to play me, you may exhaust a friendly unit. If you do, draw 2. Otherwise, draw 1.",
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-055/298",
+        "imgSrc": "055.jpg",
+        "name": "Wielder of Water",
+        "type": "Unit",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 2,
+        "description": "While I'm attacking or defending alone, I have +2.",
+        "faction": ["Ionia"],
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-058/298",
+        "imgSrc": "058.jpg",
+        "name": "Discipline",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "description": "Reaction (This may be played in response to another spell or ability.) Give a unit +2 might this turn. Draw 1.",
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-064/298",
+        "imgSrc": "064.jpg",
+        "name": "Wind Wall",
+        "type": "Spell",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Calm"],
+                "count": 2
+            }
+        },
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "description": "Reaction (This may be played in response to another spell or ability.) Counter a spell.",
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-080/298",
+        "imgSrc": "080.jpg",
+        "name": "Seal of Calm",
+        "type": "Gear",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": ["Calm"],
+                "count": 1
+            }
+        },
+        "description": "Exhaust me: Add 1 Calm Power. Activate this any time.",
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-082/298",
+        "imgSrc": "082.jpg",
+        "name": "Yasuo",
+        "type": "Champion",
+        "title": "Remorseful",
+        "cost": {
+            "energy": 6,
+            "power": {
+                "rune": ["Calm"],
+                "count": 2
+            }
+        },
+        "might": 6,
+        "description": "When I attack, deal damage equal to my Might to an enemy here.",
+        "faction": ["Ionia"],
+        "runeColor": ["Calm"]
+    },
+    {
+        "cardId": "FND-089/298",
+        "imgSrc": "089.jpg",
+        "name": "Mental Rune",
+        "type": "Rune",
+        "description": "Exhaust me: Add 1 Energy. Recycle me: Add 1 Mental Power. Activate this any time.",
+        "runeColor": ["Mental"]
+    },
+    {
+        "cardId": "FND-095/298",
+        "imgSrc": "095.jpg",
+        "name": "Stupefy",
+        "type": "Spell",
+        "cost": {
+            "energy": 1,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Reaction (This may be played in response to another spell or ability.) Give a unit -1 Might this turn (minimum 1). Draw 1.",
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Mental"]
+    },
+    {
+        "cardId": "FND-096/298",
+        "imgSrc": "096.jpg",
+        "name": "Watchful Sentry",
+        "type": "Unit",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 1,
+        "description": "Deathknell: Draw 1. (When I die, get the effect.)",
+        "faction": ["Freljord"],
+        "keywords": [
+            {
+                "name": "Deathknell",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Mental"]
+    },
+    {
+        "cardId": "FND-118/298",
+        "imgSrc": "118.jpg",
+        "name": "Wraith of Echoes",
+        "type": "Unit",
+        "cost": {
+            "energy": 6,
+            "power": {
+                "rune": ["Mental"],
+                "count": 1
+            }
+        },
+        "might": 5,
+        "description": "The first time a friendly unit dies each turn, draw 1.",
+        "faction": ["Shadow Isles", "Spirit"],
+        "runeColor": ["Mental"]
+    },
+    {
+        "cardId": "FND-123/298",
+        "imgSrc": "123.jpg",
+        "name": "Unchecked Power",
+        "type": "Spell",
+        "cost": {
+            "energy": 7,
+            "power": {
+                "rune": ["Mental"],
+                "count": 2
+            }
+        },
+        "description": "Focused (Play only during your turn outside a showdown.) Epic (This starts a showdown.) Exhaust all friendly units, then deal 12 to all units at battlefields.",
+        "keywords": [
+            {
+                "name": "Focused",
+                "level": 1
+            },
+            {
+                "name": "Epic",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Mental"]
+    },
+    {
+        "cardId": "FND-127/298",
+        "imgSrc": "127.jpg",
+        "name": "Challenge",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": ["Physical"],
+                "count": 0
+            }
+        },
+        "description": "Choose a friendly unit and an enemy unit. They deal damage equal to their Mights to each other.",
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-133/298",
+        "imgSrc": "133.jpg",
+        "name": "Mobilize",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Play your top rune exhausted. If you can't, draw 1.",
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-135/298",
+        "imgSrc": "135.jpg",
+        "name": "Physical Rune",
+        "type": "Rune",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Exhaust me: add 1 Energy. Recycle me: add 1 Physical Power. Activate this any time.",
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-137/298",
+        "imgSrc": "137.jpg",
+        "name": "Stormclaw Ursine",
+        "type": "Unit",
+        "cost": {
+            "energy": 7,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 6,
+        "description": "Tank (I must be assigned combat damage first.) When you play me, play your top rune exhausted.",
+        "faction": ["Freljord"],
+        "keywords": [
+            {
+                "name": "Tank",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-138/298",
+        "imgSrc": "138.jpg",
+        "name": "Catalyst of Aeons",
+        "type": "Spell",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Play your top 2 Runes exhausted. If you can't, draw 1.",
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-149/298",
+        "imgSrc": "149.jpg",
+        "name": "Carnivorous Snapvine",
+        "type": "Unit",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": ["Physical"],
+                "count": 2
+            }
+        },
+        "might": 6,
+        "description": "When you play me, choose a unit. We deal damage equal to our Mights to each other.",
+        "faction": ["Shadow Isles"],
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-158/298",
+        "imgSrc": "158.jpg",
+        "name": "Volibear",
+        "type": "Champion",
+        "cost": {
+            "energy": 12,
+            "power": {
+                "rune": ["Physical"],
+                "count": 2
+            }
+        },
+        "might": 10,
+        "keywords": [
+            {
+                "name": "Tank",
+                "level": 1
+            },
+            {
+                "name": "Shield",
+                "level": 3
+            }
+        ],
+        "description": "Tank Shield 3 (I must be assigned combat damage first. +3 while I'm a defender.) When an opponent moves to a battlefield other than mine, draw 1. (My base is not a battlefield.)",
+        "faction": ["Freljord"],
+        "title": "Imposing",
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-161/298",
+        "imgSrc": "161.jpg",
+        "name": "Deadbloom Predator",
+        "type": "Unit",
+        "cost": {
+            "energy": 8,
+            "power": {
+                "rune": ["Physical"],
+                "count": 2
+            }
+        },
+        "might": 8,
+        "keywords": [
+            {
+                "name": "Deflect",
+                "level": 1
+            }
+        ],
+        "description": "Deflect (Opponents must pay to choose me with a spell or effect.) You may play me to an occupied enemy battlefield.",
+        "faction": ["Shadow Isles"],
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-162/298",
+        "imgSrc": "162.jpg",
+        "name": "Miss Fortune",
+        "type": "Champion",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": ["Physical"],
+                "count": 1
+            }
+        },
+        "might": 5,
+        "keywords": [
+            {
+                "name": "Ganking",
+                "level": 1
+            },
+            {
+                "name": "Accelerate",
+                "level": 1
+            }
+        ],
+        "description": "Ganking Accelerate (I can move from battlefield to battlefield. As I'm played, you may pay 1  as an additional cost to have me enter ready.) The first time I move each turn, you may ready another card.",
+        "faction": ["Bilgewater", "Pirate"],
+        "title": "Captain",
+        "runeColor": ["Physical"]
+    },
+    {
+        "cardId": "FND-165/298",
+        "imgSrc": "165.jpg",
+        "name": "Cemetery Attendant",
+        "type": "Unit",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "might": 3,
+        "description": "When you play me, return a unit from your trash to your hand.",
+        "faction": ["Shadow Isles", "Dog"],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-166/298",
+        "imgSrc": "166.jpg",
+        "name": "Chaotic Rune",
+        "type": "Rune",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Exhaust me: add 1 Energy. Recycle me: add 1 Chaotic Power. Activate this any time.",
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-169/298",
+        "imgSrc": "169.jpg",
+        "name": "Gust",
+        "type": "Spell",
+        "cost": {
+            "energy": 1,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "description": "Reaction (This may be played in response to another spell or ability.)\nReturn a unit with 3 might or less to its owner's hand.",
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-172/298",
+        "imgSrc": "172.jpg",
+        "name": "Rebuke",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 2
+            }
+        },
+        "description": "Return a unit at a battlefield to its owner's hand.",
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-177/298",
+        "imgSrc": "177.jpg",
+        "name": "Stealthy Pursuer",
+        "type": "Unit",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "might": 4,
+        "description": "When a friendly unit moves from my location, I may be moved with it.",
+        "faction": ["Shurima"],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-178/298",
+        "imgSrc": "178.jpg",
+        "name": "Undercover Agent",
+        "type": "Unit",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "might": 5,
+        "description": "Deathknell: Discard 2 then draw 2. (When I die, get the effect.)",
+        "keywords": [
+            {
+                "name": "Deathknell",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-185/298",
+        "imgSrc": "185.jpg",
+        "name": "Traveling Merchant",
+        "type": "Unit",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 2,
+        "description": "When I move, discard 1 then draw 1.",
+        "faction": ["Bilgewater"],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-189/298",
+        "imgSrc": "189.jpg",
+        "name": "Kayn",
+        "type": "Champion",
+        "cost": {
+            "energy": 6,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "might": 6,
+        "keywords": [
+            {
+                "name": "Ganking",
+                "level": 1
+            }
+        ],
+        "description": "Ganking (I can move from battlefield to battlefield.) If I have moved twice this turn, I don't take damage.",
+        "faction": ["Ionia"],
+        "title": "Unleashed",
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-191/298",
+        "imgSrc": "191.jpg",
+        "name": "Maddened Marauder",
+        "type": "Unit",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 4,
+        "keywords": [{ "name": "Tank", "level": 1 }],
+        "description": "Tank (I must be assigned combat damage first.) When you play me, move a unit from a battlefield to its base.",
+        "faction": ["Bilgewater", "Pirate"],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-196/298",
+        "imgSrc": "196.jpg",
+        "name": "Teemo",
+        "type": "Champion",
+        "title": "Scout",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 1,
+        "faction": ["Bandle City", "Yordle"],
+        "description": "Hidden (Hide this facedown at a battlefield you control for 1 Rune. Play as a Reaction here on a later turn for 0 Energy.)\nWhen you play me, give me +3 might this turn.",
+        "keywords": [{
+            "name": "Hidden",
+            "level": 1
+        }],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-202/298",
+        "imgSrc": "202.jpg",
+        "name": "Jinx",
+        "type": "Champion",
+        "title": "Rebel",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "might": 5,
+        "description": "When you discard one or more cards, ready me and give me +1 might this turn.",
+        "faction": ["Zaun"],
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-203/298",
+        "imgSrc": "203.jpg",
+        "name": "Miss Fortune",
+        "type": "Champion",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "might": 4,
+        "description": "You may play me to an open battlefield. Friendly units may be played to open battlefields.",
+        "faction": ["Bilgewater", "Pirate"],
+        "rarity": "Buccaneer",
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-204/298",
+        "imgSrc": "204.jpg",
+        "name": "Possession",
+        "type": "Spell",
+        "cost": {
+            "energy": 8,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 3
+            }
+        },
+        "description": "Move an enemy from a battlefield to your base exhausted. You now control it.",
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-205/298",
+        "imgSrc": "205.jpg",
+        "name": "Seal of Discord",
+        "type": "Gear",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": ["Chaotic"],
+                "count": 1
+            }
+        },
+        "description": "Exhaust me: Add 1 Chaotic. Activate this any time.",
+        "runeColor": ["Chaotic"]
+    },
+    {
+        "cardId": "FND-208/298",
+        "imgSrc": "208.jpg",
+        "name": "Cruel Patron",
+        "type": "Unit",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 6,
+        "description": "As an additional cost to play me, kill a friendly unit.",
+        "faction": ["Noxus"],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-209/298",
+        "imgSrc": "209.jpg",
+        "name": "Cull",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": ["Order"],
+                "count": 1
+            }
+        },
+        "description": "Focused (Play only during your turn outside a showdown.) Each player kills one of their units.",
+        "faction": [],
+        "keywords": [
+            {
+                "name": "Focused",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-211/298",
+        "imgSrc": "211.jpg",
+        "name": "Faithful Manufactor",
+        "type": "Unit",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 2,
+        "description": "When you play me, play a 1 might Recruit unit token here.",
+        "faction": ["Piltover"],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-213/298",
+        "imgSrc": "213.jpg",
+        "name": "Hidden Blade",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": ["Order"],
+                "count": 1
+            }
+        },
+        "description": "Hidden (Hide this facedown at a battlefield you control for 1 Rune. Play as a Reaction here on a later turn for 0 Energy.) \nKill a unit at a battlefield. Its controller draws 2.",
+        "keywords": [
+            {
+                "name": "Hidden",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-214/298",
+        "imgSrc": "214.jpg",
+        "name": "Order Rune",
+        "type": "Rune",
+        "description": "Exhaust me: Add 1 Energy. Recycle me: Add 1 Order Power. Activate this any time.",
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-216/298",
+        "imgSrc": "216.jpg",
+        "name": "Soaring Scout",
+        "type": "Unit",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 1,
+        "faction": ["Freljord", "Bird"],
+        "description": "Deathknell - Play your top rune exhausted. (When I die, get the effect.)",
+        "keywords": [
+            {
+                "name": "Deathknell",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-218/298",
+        "imgSrc": "218.jpg",
+        "name": "Vanguard Captain",
+        "type": "Unit",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Order"],
+                "count": 1
+            }
+        },
+        "might": 3,
+        "description": "Legion: When you play me, play two 1 might Recruit unit tokens here. (Get the effect if you've played another card this turn.)",
+        "faction": ["Demacia", "Elite"],
+        "keywords": [
+            {
+                "name": "Legion",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-232/298",
+        "imgSrc": "232.jpg",
+        "name": "Machine Evangel",
+        "type": "Unit",
+        "cost": {
+            "energy": 5,
+            "power": {
+                "rune": ["Order"],
+                "count": 1
+            }
+        },
+        "might": 4,
+        "description": "Deathknell: Play three 1 might Recruit unit tokens into your base. (When I die, get the effect.)",
+        "faction": ["Piltover"],
+        "keywords": [
+            {
+                "name": "Deathknell",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-234/298",
+        "imgSrc": "234.jpg",
+        "name": "Grand Strategem",
+        "type": "Spell",
+        "cost": {
+            "energy": 6,
+            "power": {
+                "rune": ["Order"],
+                "count": 3
+            }
+        },
+        "description": "Give friendly units +5 might this turn.",
+        "faction": ["Demacia"],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-235/298",
+        "imgSrc": "235.jpg",
+        "name": "Harnessed Dragon",
+        "type": "Unit",
+        "cost": {
+            "energy": 8,
+            "power": {
+                "rune": ["Order"],
+                "count": 2
+            }
+        },
+        "might": 6,
+        "description": "When you play me, kill a unit.",
+        "faction": ["Demacia", "Dragon"],
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-245/298",
+        "imgSrc": "245.jpg",
+        "name": "Seal of Unity",
+        "type": "Gear",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": ["Order"],
+                "count": 1
+            }
+        },
+        "description": "Exhaust me: Add 1 Order. Activate this any time.",
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-246/298",
+        "imgSrc": "246.jpg",
+        "name": "Viktor",
+        "type": "Champion",
+        "title": "Leader",
+        "cost": {
+            "energy": 4,
+            "power": {
+                "rune": ["Order"],
+                "count": 1
+            }
+        },
+        "might": 4,
+        "faction": ["Zaun"],
+        "description": "When another non-Recruit unit you control dies, play a 1 Might Recruit unit token into your base.",
+        "runeColor": ["Order"]
+    },
+    {
+        "cardId": "FND-249/298",
+        "imgSrc": "249.jpg",
+        "name": "Relentless Storm",
+        "type": "Legend",
+        "description": "When you play a unit with 5+ might, you may exhaust me to play your top rune exhausted.",
+        "champion": "Volibear",
+        "runes": ["Fury", "Physical"],
+        "rarity": "Legend",
+        "runeColor": ["Fury", "Physical"]
+    },
+    {
+        "cardId": "FND-250/298",
+        "imgSrc": "250.jpg",
+        "name": "Stormbringer",
+        "type": "Spell",
+        "cost": {
+            "energy": 6,
+            "power": {
+                "rune": ["Fury", "Physical"],
+                "count": 2
+            }
+        },
+        "keywords": [
+            {
+                "name": "Focused",
+                "level": 1
+            },
+            {
+                "name": "Epic",
+                "level": 1
+            }
+        ],
+        "description": "Focused (Play only during your turn outside a showdown.) Epic (This starts a showdown.) Choose a friendly unit in your base. Deal damage equal to its Might to all enemies at a battlefield, then move your unit there.",
+        "champion": "Volibear",
+        "runeColor": ["Fury", "Physical"]
+    },
+    {
+        "cardId": "FND-251/298",
+        "imgSrc": "251.jpg",
+        "name": "Loose Cannon",
+        "type": "Legend",
+        "description": "At the start of your Beginning Phase, draw 1 if you have 1 or fewer cards in your hand.",
+        "champion": "Jinx",
+        "runes": ["Fury", "Chaotic"],
+        "rarity": "Legend",
+        "runeColor": ["Fury", "Chaotic"]
+    },
+    {
+        "cardId": "FND-252/298",
+        "imgSrc": "252.jpg",
+        "name": "Super Mega Death Rocket!",
+        "type": "Spell",
+        "restriction": {
+            "champion": "Jinx"
+        },
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Fury", "Chaotic"],
+                "count": 2
+            }
+        },
+        "description": "Focused (Play only during your turn outside a showdown.) Deal 5 to a unit anywhere. When you score, you may discard a card to return me from your trash to your hand.",
+        "keywords": [
+            {
+                "name": "Focused",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Fury", "Chaotic"]
+    },
+    {
+        "cardId": "FND-259/298",
+        "imgSrc": "259.jpg",
+        "name": "Unforgiven",
+        "type": "Legend",
+        "description": "2 energy, exhaust me: Move a friendly unit to or from your base.",
+        "champion": "Yasuo",
+        "runes": ["Calm", "Chaotic"],
+        "rarity": "Legend",
+        "runeColor": ["Calm", "Chaotic"]
+    },
+    {
+        "cardId": "FND-260/298",
+        "imgSrc": "260.jpg",
+        "name": "Last Breath",
+        "type": "Spell",
+        "cost": {
+            "energy": 3,
+            "power": {
+                "rune": ["Calm", "Chaotic"],
+                "count": 2
+            }
+        },
+        "description": "Ready a friendly unit. It deals damage equal to its Might to an enemy at a battlefield.",
+        "champion": "Yasuo",
+        "runeColor": ["Calm", "Chaotic"]
+    },
+    {
+        "cardId": "FND-265/298",
+        "imgSrc": "265.jpg",
+        "name": "Machine Herald",
+        "type": "Legend",
+        "description": "2 energy, exhaust me: Play a 1 might Recruit unit token.",
+        "champion": "Viktor",
+        "runes": ["Order", "Mental"],
+        "rarity": "Legend",
+        "runeColor": ["Order", "Mental"]
+    },
+    {
+        "cardId": "FND-266/298",
+        "imgSrc": "266.jpg",
+        "name": "Siphon Power",
+        "type": "Spell",
+        "cost": {
+            "energy": 2,
+            "power": {
+                "rune": ["Order", "Mental"],
+                "count": 1
+            }
+        },
+        "description": "Reaction (This may be played in response to another spell or ability.) Choose a battlefield. Give friendly units there +1 Might and enemy units there -1 Might (minimum 1) until end of turn.",
+        "keywords": [
+            {
+                "name": "Reaction",
+                "level": 1
+            }
+        ],
+        "runeColor": ["Order", "Mental"]
+    },{
+        "cardId": "FND-273/298",
+        "imgSrc": "273.jpg",
+        "name": "Recruit",
+        "type": "Unit",
+        "cost": {
+            "energy": 0,
+            "power": {
+                "rune": [],
+                "count": 0
+            }
+        },
+        "might": 1,
+        "description": "We are the future.",
+        "runeColor": ["none"]
+    },
+    {
+        "cardId": "FND-275/298",
+        "imgSrc": "275.jpg",
+        "name": "Altar to Unity",
+        "type": "Battlefield",
+        "description": "When you hold here, play a 1 Might Recruit unit token in your base."
+    },
+    {
+        "cardId": "FND-284/298",
+        "imgSrc": "284.jpg",
+        "name": "Obelisk of Power",
+        "type": "Battlefield",
+        "description": "Players play one additional rune during their first Runic Phase this game."
+    },
+    {
+        "cardId": "FND-285/298",
+        "imgSrc": "285.jpg",
+        "name": "Reavers's Row",
+        "type": "Battlefield",
+        "description": "When you defend here, you may move a friendly unit here to base."
+    },
+    {
+        "cardId": "FND-287/298",
+        "imgSrc": "287.jpg",
+        "name": "Sigil of the Storm",
+        "type": "Battlefield",
+        "description": "When you conquer here, recycle one of your runes."
+    },
+    {
+        "cardId": "FND-289/298",
+        "imgSrc": "289.jpg",
+        "name": "Targon's Peak",
+        "type": "Battlefield",
+        "description": "When you conquer here, choose 2 runes. Ready them at the end of this turn."
+    },
+    {
+        "cardId": "FND-293/298",
+        "imgSrc": "293.jpg",
+        "name": "The Grand Plaza",
+        "type": "Battlefield",
+        "description": "When you hold here, if you have 7+ units here, you win the game."
+    },
+    {
+        "cardId": "FND-294/298",
+        "imgSrc": "294.jpg",
+        "name": "Trifarian War Camp",
+        "type": "Battlefield",
+        "description": "Units here have +1 Might. (Including attackers)"
+    },
+    {
+        "cardId": "FND-296/298",
+        "imgSrc": "296.jpg",
+        "name": "Void Gate",
+        "type": "Battlefield",
+        "description": "Spells and abilities affecting units here each deal 1 Bonus Damage. (Each instance of damage the spell deals is increased by 1.)"
+    },
+    {
+        "cardId": "FND-297/298",
+        "imgSrc": "297.jpg",
+        "name": "Windswept Hillock",
+        "type": "Battlefield",
+        "description": "Units here have Ganking. (They can move battlefield to battlefield.)"
+    },
+    {
+        "cardId": "FND-298/298",
+        "imgSrc": "298.jpg",
+        "name": "Zaun Warrens",
+        "type": "Battlefield",
+        "description": "When you conquer here, discard 1 then draw 1."
+    }
+]
