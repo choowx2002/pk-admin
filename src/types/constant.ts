@@ -1,5 +1,5 @@
 export const Powers = [
-  "Furry",
+  "Fury",
   "Mental",
   "Chaotic",
   "Physical",

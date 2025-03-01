@@ -36,3 +36,7 @@ input:focus, textarea:focus, select:focus {
   box-shadow: none !important;
   /* border-color: transparent !important; */
 }
+
+.white-image {
+  filter: brightness(0) invert(1);
+}
