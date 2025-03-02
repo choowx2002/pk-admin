@@ -3,8 +3,20 @@ import Image from "next/image";
 import cardsData from "@/data/cards.json";
 import { useEffect, useState } from "react";
 import { Ampersand, Search } from "lucide-react";
-import { CardType, CardTypes, Powers, PowerType } from "@/types/constant";
+import {
+    CardType,
+    CardTypes,
+    Powers,
+    PowerType,
+    runeColors,
+} from "@/types/constant";
 import { useRouter } from "next/navigation";
+import {
+    Keyword,
+    KeywordDetails,
+    KeywordList,
+    KeywordType,
+} from "@/types/keywords";
 
 export interface Card {
     type: string;
@@ -32,15 +44,6 @@ interface CardDisplayProps {
     card: Card;
 }
 
-const runeColors: Record<string, string> = {
-    Fury: "bg-red-400",
-    Mental: "bg-blue-400",
-    Chaotic: "bg-purple-400",
-    Physical: "bg-orange-400",
-    Order: "bg-yellow-400",
-    Calm: "bg-green-600",
-};
-
 const CardDisplay: React.FC<CardDisplayProps> = ({ card }) => {
     const router = useRouter();
     return (
@@ -66,6 +69,7 @@ export default function CardsPage() {
     const cards: Card[] = cardsData;
     const [selectedRunes, setSelectedRunes] = useState<PowerType[]>([]);
     const [selectedTypes, setSelectedTypes] = useState<CardType[]>([]);
+    const [selectedKeys, setSelectedKeys] = useState<KeywordType[]>([]);
     const [searchKey, setSearchKey] = useState<string>("");
     const [filteredCards, setFilteredCards] = useState<Card[]>(cards);
     const [withAnd, setWithAnd] = useState(false);
@@ -137,6 +141,19 @@ export default function CardsPage() {
         }
     };
 
+    const optionChange = (v: React.ChangeEvent<HTMLSelectElement>) => {
+        console.log(v.target.value);
+        const value = v.target.value as KeywordType;
+        const updated = new Set([...selectedKeys]);
+        updated.add(value);
+        setSelectedKeys(Array.from(updated));
+    };
+
+    const removeKeys = (index: number) => {
+        const newTags = selectedKeys.filter((_, i) => i !== index);
+        setSelectedKeys(newTags);
+    };
+
     useEffect(() => {
         const tempCards = [...cards];
         let filtered = [];
@@ -191,6 +208,18 @@ export default function CardsPage() {
             return cPower >= min && cPower <= max;
         }
 
+        function checkKeywords(
+            keywords: { name: string; level: number }[] | undefined
+        ) {
+            if (selectedKeys.length === 0) return true;
+            if (!keywords || keywords.length === 0) return false;
+            const keywordsList = keywords.map((k) => k.name);
+            for (const k of keywordsList) {
+                if (selectedKeys.includes(k as KeywordType)) return true;
+            }
+            return false;
+        }
+
         filtered = tempCards.filter((c) => {
             const isInKey =
                 searchKey.trim() === ""
@@ -202,13 +231,15 @@ export default function CardsPage() {
             const isInMight = checkMight(c?.might);
             const isInEnergy = checkEnergy(c?.cost?.energy);
             const isInPower = checkPower(c?.cost?.power.count);
+            const isInKeywords = checkKeywords(c?.keywords);
             return (
                 isInKey &&
                 isInRunes &&
                 isInTypes &&
                 isInMight &&
                 isInEnergy &&
-                isInPower
+                isInPower &&
+                isInKeywords
             );
         });
 
@@ -221,6 +252,7 @@ export default function CardsPage() {
         might,
         energy,
         power,
+        selectedKeys,
     ]);
 
     return (
@@ -307,7 +339,7 @@ export default function CardsPage() {
                                     className={
                                         "transition-transform p-1 ease-out hover:scale-110 " +
                                         (selectedTypes.includes(type)
-                                            ? "white-image"
+                                            ? "bg-amber-500"
                                             : " ")
                                     }
                                     alt={type}
@@ -393,6 +425,44 @@ export default function CardsPage() {
                         value={power.max}
                         onChange={(e) => inputHandler(e, "p-max")}
                     />
+                </div>
+                <div className="flex items-center gap-1 ml-1 shadow-lg border-2 px-2 rounded-lg py-1">
+                    {selectedKeys.map((keys, index) => {
+                        const details = KeywordDetails[keys];
+                        return (
+                            <div
+                                key={index}
+                                className={
+                                    "flex items-center px-2 py-1 rounded-lg " +
+                                    details.bgColor +
+                                    " " +
+                                    details.color
+                                }
+                            >
+                                {keys}
+                                <span
+                                    className={
+                                        "ml-2 cursor-pointer " + details.color
+                                    }
+                                    onClick={() => removeKeys(index)}
+                                >
+                                    &times;
+                                </span>
+                            </div>
+                        );
+                    })}
+                    <select onChange={(v) => optionChange(v)}>
+                        <option value="none">Keyword</option>
+                        {KeywordList.map((key, index) => {
+                            return (
+                                !selectedKeys.includes(key) && (
+                                    <option value={key} key={index}>
+                                        {key}
+                                    </option>
+                                )
+                            );
+                        })}
+                    </select>
                 </div>
                 <div>
                     <button

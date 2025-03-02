@@ -19,3 +19,12 @@ export const CardTypes = [
 ] as const;
 
 export type CardType = typeof CardTypes[number];
+
+export const runeColors: Record<string, string> = {
+    Fury: "bg-red-400",
+    Mental: "bg-blue-400",
+    Chaotic: "bg-purple-400",
+    Physical: "bg-orange-400",
+    Order: "bg-yellow-400",
+    Calm: "bg-green-600",
+};
