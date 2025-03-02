@@ -24,7 +24,7 @@ export const KeywordList = [
   "Legion",
   "Hidden",
   "Reaction",
-  "Focus",
+  "Focused",
   "Epic"
 ] as const;
 
@@ -113,8 +113,8 @@ export const KeywordDetails: Record<KeywordType, KeywordInfo> = {
     bgColor: "bg-[#7962a9]",
     hasLevel: false
   },
-  Focus: {
-    name: "Focus",
+  Focused: {
+    name: "Focused",
     cnName: "专注",
     color: "text-white",
     bgColor: "bg-[#426db1]",

@@ -478,6 +478,7 @@ export default function CardsPage() {
                             setMight({ min: "", max: "" });
                             setEnergy({ min: "", max: "" });
                             setPower({ min: "", max: "" });
+                            setSelectedKeys([]);
                         }}
                     >
                         RESET
