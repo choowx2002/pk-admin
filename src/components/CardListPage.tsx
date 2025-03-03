@@ -267,11 +267,11 @@ export default function CardsPage() {
     ]);
 
     return (
-        <div className="bg-amber-50">
+        <div>
             <header className="h-16 flex items-center px-4">
                 <div className="font-extrabold text-3xl">Project K</div>
                 <div className="ml-auto border-2 rounded-2xl py-1">
-                    <select value={language} onChange={languageChange}>
+                    <select className="mx-1" value={language} onChange={languageChange}>
                         {LanguageOptions.map((l, i) => {
                             return (
                                 <option value={l} key={i}>
@@ -282,9 +282,9 @@ export default function CardsPage() {
                     </select>
                 </div>
             </header>
-            <div className="flex flex-nowrap gap-4">
-                <div className="p-2 w-1/3 min-w-[360px]">
-                    <div className="flex w-full mb-2 gap-1 py-1 items-center shadow-lg border-2 px-2 rounded-lg mx-2">
+            <div className="min-[855px]:flex-nowrap min-[855px]:flex gap-4">
+                <div className="p-2 min-w-[360px] min-[855px]:w-1/3">
+                    <div className="flex mb-2 gap-1 py-1 items-center shadow-lg border-2 px-2 rounded-lg mx-2 h-12">
                         <Search />
                         <input
                             type="search"
@@ -294,7 +294,7 @@ export default function CardsPage() {
                             className="px-2 py-1"
                         />
                     </div>
-                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                    <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
                         <b>RUNE: </b>
                         {Powers.map((rune) => {
                             return (
@@ -348,7 +348,7 @@ export default function CardsPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                    <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
                         <b>TYPE: </b>
                         {CardTypes.map((type) => {
                             return (
@@ -386,13 +386,13 @@ export default function CardsPage() {
                             );
                         })}
                     </div>
-                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                    <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
                         <b>Might:</b>{" "}
                         <input
                             type="number"
                             min={0}
                             max={12}
-                            className="border-b-2"
+                            className="flex-1 border-b-2"
                             placeholder="min"
                             value={might.min}
                             onChange={(e) => inputHandler(e, "m-min")}
@@ -402,19 +402,19 @@ export default function CardsPage() {
                             type="number"
                             min={0}
                             max={12}
-                            className="border-b-2"
+                            className="flex-1 border-b-2"
                             placeholder="max"
                             value={might.max}
                             onChange={(e) => inputHandler(e, "m-max")}
                         />
                     </div>
-                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                    <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
                         <b>Energy:</b>{" "}
                         <input
                             type="number"
                             min={0}
                             max={12}
-                            className="border-b-2"
+                            className="flex-1 border-b-2"
                             placeholder="min"
                             value={energy.min}
                             onChange={(e) => inputHandler(e, "e-min")}
@@ -424,19 +424,19 @@ export default function CardsPage() {
                             type="number"
                             min={0}
                             max={12}
-                            className="border-b-2"
+                            className="flex-1 border-b-2"
                             placeholder="max"
                             value={energy.max}
                             onChange={(e) => inputHandler(e, "e-max")}
                         />
                     </div>
-                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                    <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
                         <b>Power:</b>{" "}
                         <input
                             type="number"
                             min={0}
                             max={12}
-                            className="border-b-2"
+                            className="flex-1 border-b-2"
                             placeholder="min"
                             value={power.min}
                             onChange={(e) => inputHandler(e, "p-min")}
@@ -446,13 +446,13 @@ export default function CardsPage() {
                             type="number"
                             min={0}
                             max={3}
-                            className="border-b-2"
+                            className="flex-1 border-b-2"
                             placeholder="max"
                             value={power.max}
                             onChange={(e) => inputHandler(e, "p-max")}
                         />
                     </div>
-                    <div className="flex flex-wrap w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                    <div className="flex flex-wrap mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
                         {selectedKeys.map((keys, index) => {
                             const details = KeywordDetails[keys];
                             return (
@@ -478,7 +478,7 @@ export default function CardsPage() {
                                 </div>
                             );
                         })}
-                        <select onChange={(v) => optionChange(v)}>
+                        <select className="h-10 font-bold" onChange={(v) => optionChange(v)}>
                             <option value="none">Keyword</option>
                             {KeywordList.map((key, index) => {
                                 return (
@@ -491,12 +491,12 @@ export default function CardsPage() {
                             })}
                         </select>
                     </div>
-                    <div className="w-full mb-2">
+                    <div className="mb-2 h-12">
                         <button
                             type="button"
                             data-twe-ripple-init
                             data-twe-ripple-color="light"
-                            className="w-full mx-2 shadow-lg border-2 border-black px-2 rounded-lg py-1 h-full text-center font-bold bg-red-600 text-white"
+                            className="mx-2 shadow-lg border-2 border-black px-2 rounded-lg py-1 h-full text-center font-bold bg-red-600 text-white"
                             onClick={() => {
                                 setSearchKey("");
                                 setSelectedRunes([]);
