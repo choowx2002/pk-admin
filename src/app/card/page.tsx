@@ -1,5 +1,5 @@
 "use client";
-import cardsData from "@/data/cards.json";
+import cardsData from "@/data/cards-cn.json";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Card } from "@/components/CardListPage";

@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
-import cardsData from "@/data/cards.json";
 import { useEffect, useState } from "react";
 import { Ampersand, Search } from "lucide-react";
 import {
     CardType,
     CardTypes,
+    languageOption,
+    LanguageOptions,
     Powers,
     PowerType,
     runeColors,
@@ -17,6 +18,8 @@ import {
     KeywordList,
     KeywordType,
 } from "@/types/keywords";
+import fsPromises from "fs/promises";
+import path from "path";
 
 export interface Card {
     type: string;
@@ -48,8 +51,7 @@ const CardDisplay: React.FC<CardDisplayProps> = ({ card }) => {
     const router = useRouter();
     return (
         <div
-            className="border mx-2 mb-2 rounded-xl shadow-lg overflow-hidden h-min"
-            style={{ width: "calc((100% - 48px) / 3 )" }}
+            className="inline-flex border mx-2 mb-2 rounded-xl shadow-lg overflow-hidden h-min w-[200px]"
             onClick={() => router.push(`/card?cardId=${card.cardId}`)}
         >
             {card?.imgSrc && (
@@ -58,7 +60,7 @@ const CardDisplay: React.FC<CardDisplayProps> = ({ card }) => {
                     width={200}
                     height={300}
                     alt={card.name}
-                    className="h-auto w-auto"
+                    className="h-auto w-full"
                 />
             )}
         </div>
@@ -66,12 +68,12 @@ const CardDisplay: React.FC<CardDisplayProps> = ({ card }) => {
 };
 
 export default function CardsPage() {
-    const cards: Card[] = cardsData;
+    const [oriCards, setOriCards] = useState<Card[]>([]);
     const [selectedRunes, setSelectedRunes] = useState<PowerType[]>([]);
     const [selectedTypes, setSelectedTypes] = useState<CardType[]>([]);
     const [selectedKeys, setSelectedKeys] = useState<KeywordType[]>([]);
     const [searchKey, setSearchKey] = useState<string>("");
-    const [filteredCards, setFilteredCards] = useState<Card[]>(cards);
+    const [filteredCards, setFilteredCards] = useState<Card[]>([]);
     const [withAnd, setWithAnd] = useState(false);
     const [might, setMight] = useState({
         min: "",
@@ -85,20 +87,17 @@ export default function CardsPage() {
         min: "",
         max: "",
     });
+    const [language, setlanguage] = useState<languageOption>("en");
 
-    const searchCard = (keys: string) => {
-        const tempCards = [...cards];
-        const filtered = tempCards.filter(
-            (c) =>
-                c.name.toLowerCase().includes(keys.toLowerCase()) ||
-                c.cardId.toLowerCase().includes(keys.toLowerCase())
-        );
-        setFilteredCards(filtered);
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        searchCard(searchKey);
+    const fetchData = async () => {
+        try {
+            const response = await fetch(`/cards-${language}.json`);
+            const data = await response.json();
+            setOriCards(data);
+            setFilteredCards(data);
+        } catch (error) {
+            console.error("Error fetching card data:", error);
+        }
     };
 
     const inputHandler = (e: { target: { value: string } }, type: string) => {
@@ -141,6 +140,10 @@ export default function CardsPage() {
         }
     };
 
+    const languageChange = (e: { target: { value: string } }) => {
+        setlanguage(e.target.value as languageOption);
+    };
+
     const optionChange = (v: React.ChangeEvent<HTMLSelectElement>) => {
         console.log(v.target.value);
         const value = v.target.value as KeywordType;
@@ -155,7 +158,15 @@ export default function CardsPage() {
     };
 
     useEffect(() => {
-        const tempCards = [...cards];
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        fetchData();
+    }, [language]);
+
+    useEffect(() => {
+        const tempCards = [...oriCards];
         let filtered = [];
 
         function checkRunes(runes: string[]) {
@@ -256,11 +267,25 @@ export default function CardsPage() {
     ]);
 
     return (
-        <div>
-            <div className="p-2 flex flex-wrap gap-3 sticky top-0 z-50 shadow-lg bg-amber-50">
-                <div className="flex gap-1 py-1 items-center shadow-lg border-2 px-2 rounded-lg mx-1">
-                    <Search />
-                    <form onSubmit={handleSubmit} className="flex gap-2">
+        <div className="bg-amber-50">
+            <header className="h-16 flex items-center px-4">
+                <div className="font-extrabold text-3xl">Project K</div>
+                <div className="ml-auto border-2 rounded-2xl py-1">
+                    <select value={language} onChange={languageChange}>
+                        {LanguageOptions.map((l, i) => {
+                            return (
+                                <option value={l} key={i}>
+                                    {l}
+                                </option>
+                            );
+                        })}
+                    </select>
+                </div>
+            </header>
+            <div className="flex flex-nowrap gap-4">
+                <div className="p-2 w-1/3 min-w-[360px]">
+                    <div className="flex w-full mb-2 gap-1 py-1 items-center shadow-lg border-2 px-2 rounded-lg mx-2">
+                        <Search />
                         <input
                             type="search"
                             placeholder="Card Id / Name"
@@ -268,231 +293,234 @@ export default function CardsPage() {
                             onChange={(e) => inputHandler(e, "searchKey")}
                             className="px-2 py-1"
                         />
-                    </form>
-                </div>
-                <div className="flex items-center gap-1 ml-1 shadow-lg border-2 px-2 rounded-lg py-1">
-                    <b>RUNE: </b>
-                    {Powers.map((rune) => {
-                        return (
-                            <div
-                                key={rune}
-                                className={
-                                    "shadow-lg rounded-4xl h-min overflow-hidden border-2 " +
-                                    (selectedRunes.includes(rune)
-                                        ? runeColors[rune]
-                                        : "")
-                                }
-                            >
-                                <img
-                                    src={`/runes/${rune.toUpperCase()}.webp`}
-                                    width={32}
-                                    className={
-                                        "transition-transform p-1 ease-out hover:scale-110 " +
-                                        (selectedRunes.includes(rune)
-                                            ? "white-image"
-                                            : " ")
-                                    }
-                                    alt={rune}
-                                    onClick={() => {
-                                        const updated = [...selectedRunes];
-                                        const foundIndex = updated.findIndex(
-                                            (r) => r === rune
-                                        );
-                                        if (foundIndex !== -1) {
-                                            updated.splice(foundIndex, 1);
-                                        } else {
-                                            updated.push(rune);
-                                        }
-                                        setSelectedRunes(updated);
-                                    }}
-                                />
-                            </div>
-                        );
-                    })}
-                    <div className="border-l-2 border-black">
-                        <div
-                            className={
-                                "ml-1 border-black border-2 select-none rounded-4xl " +
-                                (withAnd ? "bg-amber-400" : "")
-                            }
-                            onClick={() => {
-                                setWithAnd(!withAnd);
-                            }}
-                        >
-                            <Ampersand className="p-0.5" size={32} />
-                        </div>
                     </div>
-                </div>
-                <div className="flex items-center gap-1 ml-1 shadow-lg border-2 px-2 rounded-lg py-1">
-                    <b>TYPE: </b>
-                    {CardTypes.map((type) => {
-                        return (
-                            <div
-                                key={type}
-                                className={
-                                    "shadow-lg rounded-4xl h-min overflow-hidden border-2 "
-                                }
-                            >
-                                <img
-                                    src={`/icon/${type.toLowerCase()}.svg`}
-                                    width={32}
-                                    className={
-                                        "transition-transform p-1 ease-out hover:scale-110 " +
-                                        (selectedTypes.includes(type)
-                                            ? "bg-amber-500"
-                                            : " ")
-                                    }
-                                    alt={type}
-                                    onClick={() => {
-                                        const updated = [...selectedTypes];
-                                        const foundIndex = updated.findIndex(
-                                            (r) => r === type
-                                        );
-                                        if (foundIndex !== -1) {
-                                            updated.splice(foundIndex, 1);
-                                        } else {
-                                            updated.push(type);
-                                        }
-                                        setSelectedTypes(updated);
-                                    }}
-                                />
-                            </div>
-                        );
-                    })}
-                </div>
-                <div className="flex items-center gap-1 ml-1 shadow-lg border-2 px-2 rounded-lg py-1">
-                    <b>Might:</b>{" "}
-                    <input
-                        type="number"
-                        min={0}
-                        max={12}
-                        className="border-b-2"
-                        placeholder="min"
-                        value={might.min}
-                        onChange={(e) => inputHandler(e, "m-min")}
-                    />
-                    <b>-</b>
-                    <input
-                        type="number"
-                        min={0}
-                        max={12}
-                        className="border-b-2"
-                        placeholder="max"
-                        value={might.max}
-                        onChange={(e) => inputHandler(e, "m-max")}
-                    />
-                </div>
-                <div className="flex items-center gap-1 ml-1 shadow-lg border-2 px-2 rounded-lg py-1">
-                    <b>Energy:</b>{" "}
-                    <input
-                        type="number"
-                        min={0}
-                        max={12}
-                        className="border-b-2"
-                        placeholder="min"
-                        value={energy.min}
-                        onChange={(e) => inputHandler(e, "e-min")}
-                    />
-                    <b>-</b>
-                    <input
-                        type="number"
-                        min={0}
-                        max={12}
-                        className="border-b-2"
-                        placeholder="max"
-                        value={energy.max}
-                        onChange={(e) => inputHandler(e, "e-max")}
-                    />
-                </div>
-                <div className="flex items-center gap-1 ml-1 shadow-lg border-2 px-2 rounded-lg py-1">
-                    <b>Power:</b>{" "}
-                    <input
-                        type="number"
-                        min={0}
-                        max={12}
-                        className="border-b-2"
-                        placeholder="min"
-                        value={power.min}
-                        onChange={(e) => inputHandler(e, "p-min")}
-                    />
-                    <b>-</b>
-                    <input
-                        type="number"
-                        min={0}
-                        max={3}
-                        className="border-b-2"
-                        placeholder="max"
-                        value={power.max}
-                        onChange={(e) => inputHandler(e, "p-max")}
-                    />
-                </div>
-                <div className="flex items-center gap-1 ml-1 shadow-lg border-2 px-2 rounded-lg py-1">
-                    {selectedKeys.map((keys, index) => {
-                        const details = KeywordDetails[keys];
-                        return (
-                            <div
-                                key={index}
-                                className={
-                                    "flex items-center px-2 py-1 rounded-lg " +
-                                    details.bgColor +
-                                    " " +
-                                    details.color
-                                }
-                            >
-                                {keys}
-                                <span
-                                    className={
-                                        "ml-2 cursor-pointer " + details.color
-                                    }
-                                    onClick={() => removeKeys(index)}
-                                >
-                                    &times;
-                                </span>
-                            </div>
-                        );
-                    })}
-                    <select onChange={(v) => optionChange(v)}>
-                        <option value="none">Keyword</option>
-                        {KeywordList.map((key, index) => {
+                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                        <b>RUNE: </b>
+                        {Powers.map((rune) => {
                             return (
-                                !selectedKeys.includes(key) && (
-                                    <option value={key} key={index}>
-                                        {key}
-                                    </option>
-                                )
+                                <div
+                                    key={rune}
+                                    className={
+                                        "shadow-lg rounded-4xl h-min overflow-hidden border-2 " +
+                                        (selectedRunes.includes(rune)
+                                            ? runeColors[rune]
+                                            : "")
+                                    }
+                                >
+                                    <img
+                                        src={`/runes/${rune.toUpperCase()}.webp`}
+                                        width={32}
+                                        className={
+                                            "transition-transform p-0.5 ease-out hover:scale-110 " +
+                                            (selectedRunes.includes(rune)
+                                                ? "white-image"
+                                                : " ")
+                                        }
+                                        alt={rune}
+                                        onClick={() => {
+                                            const updated = [...selectedRunes];
+                                            const foundIndex =
+                                                updated.findIndex(
+                                                    (r) => r === rune
+                                                );
+                                            if (foundIndex !== -1) {
+                                                updated.splice(foundIndex, 1);
+                                            } else {
+                                                updated.push(rune);
+                                            }
+                                            setSelectedRunes(updated);
+                                        }}
+                                    />
+                                </div>
                             );
                         })}
-                    </select>
+                        <div className="border-l-2 border-black">
+                            <div
+                                className={
+                                    "ml-1 border-black border-2 select-none rounded-4xl " +
+                                    (withAnd ? "bg-amber-400" : "")
+                                }
+                                onClick={() => {
+                                    setWithAnd(!withAnd);
+                                }}
+                            >
+                                <Ampersand className="p-0.5" size={32} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                        <b>TYPE: </b>
+                        {CardTypes.map((type) => {
+                            return (
+                                <div
+                                    key={type}
+                                    className={
+                                        "shadow-lg rounded-4xl h-min overflow-hidden border-2 "
+                                    }
+                                >
+                                    <img
+                                        src={`/icon/${type.toLowerCase()}.svg`}
+                                        width={32}
+                                        className={
+                                            "transition-transform p-1 ease-out hover:scale-110 " +
+                                            (selectedTypes.includes(type)
+                                                ? "bg-amber-500"
+                                                : " ")
+                                        }
+                                        alt={type}
+                                        onClick={() => {
+                                            const updated = [...selectedTypes];
+                                            const foundIndex =
+                                                updated.findIndex(
+                                                    (r) => r === type
+                                                );
+                                            if (foundIndex !== -1) {
+                                                updated.splice(foundIndex, 1);
+                                            } else {
+                                                updated.push(type);
+                                            }
+                                            setSelectedTypes(updated);
+                                        }}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                        <b>Might:</b>{" "}
+                        <input
+                            type="number"
+                            min={0}
+                            max={12}
+                            className="border-b-2"
+                            placeholder="min"
+                            value={might.min}
+                            onChange={(e) => inputHandler(e, "m-min")}
+                        />
+                        <b>-</b>
+                        <input
+                            type="number"
+                            min={0}
+                            max={12}
+                            className="border-b-2"
+                            placeholder="max"
+                            value={might.max}
+                            onChange={(e) => inputHandler(e, "m-max")}
+                        />
+                    </div>
+                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                        <b>Energy:</b>{" "}
+                        <input
+                            type="number"
+                            min={0}
+                            max={12}
+                            className="border-b-2"
+                            placeholder="min"
+                            value={energy.min}
+                            onChange={(e) => inputHandler(e, "e-min")}
+                        />
+                        <b>-</b>
+                        <input
+                            type="number"
+                            min={0}
+                            max={12}
+                            className="border-b-2"
+                            placeholder="max"
+                            value={energy.max}
+                            onChange={(e) => inputHandler(e, "e-max")}
+                        />
+                    </div>
+                    <div className="flex w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                        <b>Power:</b>{" "}
+                        <input
+                            type="number"
+                            min={0}
+                            max={12}
+                            className="border-b-2"
+                            placeholder="min"
+                            value={power.min}
+                            onChange={(e) => inputHandler(e, "p-min")}
+                        />
+                        <b>-</b>
+                        <input
+                            type="number"
+                            min={0}
+                            max={3}
+                            className="border-b-2"
+                            placeholder="max"
+                            value={power.max}
+                            onChange={(e) => inputHandler(e, "p-max")}
+                        />
+                    </div>
+                    <div className="flex flex-wrap w-full mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
+                        {selectedKeys.map((keys, index) => {
+                            const details = KeywordDetails[keys];
+                            return (
+                                <div
+                                    key={index}
+                                    className={
+                                        "flex items-center px-2 py-1 rounded-lg " +
+                                        details.bgColor +
+                                        " " +
+                                        details.color
+                                    }
+                                >
+                                    {keys}
+                                    <span
+                                        className={
+                                            "ml-2 cursor-pointer " +
+                                            details.color
+                                        }
+                                        onClick={() => removeKeys(index)}
+                                    >
+                                        &times;
+                                    </span>
+                                </div>
+                            );
+                        })}
+                        <select onChange={(v) => optionChange(v)}>
+                            <option value="none">Keyword</option>
+                            {KeywordList.map((key, index) => {
+                                return (
+                                    !selectedKeys.includes(key) && (
+                                        <option value={key} key={index}>
+                                            {key}
+                                        </option>
+                                    )
+                                );
+                            })}
+                        </select>
+                    </div>
+                    <div className="w-full mb-2">
+                        <button
+                            type="button"
+                            data-twe-ripple-init
+                            data-twe-ripple-color="light"
+                            className="w-full mx-2 shadow-lg border-2 border-black px-2 rounded-lg py-1 h-full text-center font-bold bg-red-600 text-white"
+                            onClick={() => {
+                                setSearchKey("");
+                                setSelectedRunes([]);
+                                setSelectedTypes([]);
+                                setWithAnd(false);
+                                setMight({ min: "", max: "" });
+                                setEnergy({ min: "", max: "" });
+                                setPower({ min: "", max: "" });
+                                setSelectedKeys([]);
+                            }}
+                        >
+                            RESET
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button
-                        type="button"
-                        data-twe-ripple-init
-                        data-twe-ripple-color="light"
-                        className="flex ml-1 shadow-lg border-2 border-black px-2 rounded-lg py-1 h-full items-center font-bold bg-red-600 text-white"
-                        onClick={() => {
-                            setSearchKey("");
-                            setSelectedRunes([]);
-                            setSelectedTypes([]);
-                            setWithAnd(false);
-                            setMight({ min: "", max: "" });
-                            setEnergy({ min: "", max: "" });
-                            setPower({ min: "", max: "" });
-                            setSelectedKeys([]);
-                        }}
-                    >
-                        RESET
-                    </button>
+                <div className="p-4 last:mx-auto justify-start">
+                    {filteredCards?.length ? (
+                        filteredCards.map((card: any) => (
+                            <CardDisplay key={card.cardId} card={card} />
+                        ))
+                    ) : (
+                        <li className="text-gray-500 italic">暂无卡牌</li>
+                    )}
                 </div>
-            </div>
-            <div className="p-4 flex flex-wrap max-w-[696px] last:mx-auto justify-start">
-                {filteredCards?.length ? (
-                    filteredCards.map((card: any) => (
-                        <CardDisplay key={card.cardId} card={card} />
-                    ))
-                ) : (
-                    <li className="text-gray-500 italic">暂无卡牌</li>
-                )}
             </div>
         </div>
     );
