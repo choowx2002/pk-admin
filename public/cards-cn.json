@@ -1471,7 +1471,7 @@
             "energy": 3,
             "power": {
                 "rune": ["Fury", "Chaotic"],
-                "count": 2
+                "count": 1
             }
         },
         "description": "[Focused]（只能在你的回合且法术对抗之外打出。）[new line]对场上任意位置的一个单位造成5点伤害。[new line]每当你得分时，你可以弃置一张手牌，让我从废弃堆返回你的手牌。",
