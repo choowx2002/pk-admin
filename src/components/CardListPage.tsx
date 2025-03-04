@@ -508,7 +508,7 @@ export default function CardsPage() {
                             })}
                         </select>
                     </div>
-                    <div className="mb-2 h-12">
+                    <div className="mb-2 h-12 flex justify-between">
                         <button
                             type="button"
                             data-twe-ripple-init
@@ -527,6 +527,12 @@ export default function CardsPage() {
                         >
                             RESET
                         </button>
+                        <div className="mx-2">
+                        <p className="text-start">
+                            {i18nText("Search Result", language)}{": "}
+                            {filteredCards.length} / {oriCards.length}
+                        </p>
+                    </div>
                     </div>
                 </div>
                 <div

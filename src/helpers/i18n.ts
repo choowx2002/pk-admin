@@ -9,6 +9,7 @@ const cnDict = [
     ["MIGHT", "威力"],
     ["TYPE", "类型"],
     ["FACTION", "势力"],
+    ["SEARCH RESULT", "搜索结果"],
     // keyword
     ["ACCELERATE", "急速"],
     ["ASSAULT", "强攻"],
