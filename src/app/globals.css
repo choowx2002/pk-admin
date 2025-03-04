@@ -40,3 +40,21 @@ input:focus, textarea:focus, select:focus {
 .white-image {
   filter: brightness(0) invert(1);
 }
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-card-bg {
+  background: linear-gradient(120deg, #064d5b, #0a9396, #94d2bd, #0a9396, #064d5b);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s infinite linear;
+}

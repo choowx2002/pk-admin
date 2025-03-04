@@ -1,3 +1,4 @@
+import rawKeywordMap from "@/data/keywordMap.json";
 /**
  * Keywords represent different abilities or effects that can be applied to units in the game.
  * Each keyword modifies the behavior of a unit in a specific way during gameplay.
@@ -127,4 +128,17 @@ export const KeywordDetails: Record<KeywordType, KeywordInfo> = {
     color: "bg-[#8d7d33]",
     hasLevel: false
   }
+};
+
+const keywordMap = rawKeywordMap as Record<string, string>;
+
+export const replaceKeywords = (text: string) => {
+  return text.split(/\[([^\]]+)\]/g).map((part, index) => {
+    if (keywordMap[part]) {
+      return (
+        `<span key={${index}} dangerouslySetInnerHTML={{ __html: ${keywordMap[part]} }} />`
+      );
+    }
+    return `<span key={${index}}>{${part}}</span>`;
+  });
 };

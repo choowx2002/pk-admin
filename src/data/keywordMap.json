@@ -1,0 +1,5 @@
+{
+    "Accelerate": "<span class='flex items-center px-2 py-1 rounded-lg text-white bg-red-700 w-fit'>急速></span>",
+    "Assault": "<span class='flex items-center px-2 py-1 rounded-lg text-white bg-red-700 w-fit'>强攻</span>",
+    "Epic": "<span class='flex items-center px-2 py-1 rounded-lg text-white bg-[#8d7d33] w-fit'>引导</span>"
+}

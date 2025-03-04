@@ -12,21 +12,16 @@ import {
     runeColors,
 } from "@/types/constant";
 import { useRouter } from "next/navigation";
-import {
-    Keyword,
-    KeywordDetails,
-    KeywordList,
-    KeywordType,
-} from "@/types/keywords";
-import fsPromises from "fs/promises";
-import path from "path";
+import { KeywordDetails, KeywordList, KeywordType } from "@/types/keywords";
+import useLocalStorageState from "use-local-storage-state";
+import { i18nText } from "@/helpers/i18n";
 
 export interface Card {
     type: string;
     imgSrc?: string;
     cardId: string;
     name: string;
-    runeColor?: string[];
+    runeColor: string[];
     cost?: {
         energy: number;
         power: {
@@ -41,6 +36,8 @@ export interface Card {
     might?: number;
     description: string;
     faction?: string[];
+    title?: string;
+    champion?: string[];
 }
 
 interface CardDisplayProps {
@@ -87,7 +84,13 @@ export default function CardsPage() {
         min: "",
         max: "",
     });
-    const [language, setlanguage] = useState<languageOption>("en");
+
+    const [language, setlanguage] = useLocalStorageState<languageOption>(
+        "userLanguage",
+        {
+            defaultValue: "cn",
+        }
+    );
 
     const fetchData = async () => {
         try {
@@ -269,9 +272,15 @@ export default function CardsPage() {
     return (
         <div>
             <header className="h-16 flex items-center px-4">
-                <div className="font-extrabold text-3xl">Project K</div>
-                <div className="ml-auto border-2 rounded-2xl py-1">
-                    <select className="mx-1" value={language} onChange={languageChange}>
+                <div className="font-extrabold text-3xl">
+                    {language !== "cn" ? "Project K" : "符文战场"}
+                </div>
+                {/* <div className="ml-auto border-2 rounded-2xl py-1">
+                    <select
+                        className="mx-1"
+                        value={language}
+                        onChange={languageChange}
+                    >
                         {LanguageOptions.map((l, i) => {
                             return (
                                 <option value={l} key={i}>
@@ -280,10 +289,10 @@ export default function CardsPage() {
                             );
                         })}
                     </select>
-                </div>
+                </div> */}
             </header>
-            <div className="min-[855px]:flex-nowrap min-[855px]:flex gap-4">
-                <div className="p-2 min-w-[360px] min-[855px]:w-1/3">
+            <div className="w-[1060px] grid grid-cols-12 mx-auto">
+                <div className="col-span-4">
                     <div className="flex mb-2 gap-1 py-1 items-center shadow-lg border-2 px-2 rounded-lg mx-2 h-12">
                         <Search />
                         <input
@@ -295,7 +304,7 @@ export default function CardsPage() {
                         />
                     </div>
                     <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
-                        <b>RUNE: </b>
+                        <b>{i18nText("rune", language)}: </b>
                         {Powers.map((rune) => {
                             return (
                                 <div
@@ -349,7 +358,7 @@ export default function CardsPage() {
                         </div>
                     </div>
                     <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
-                        <b>TYPE: </b>
+                        <b>{i18nText("Type", language)}: </b>
                         {CardTypes.map((type) => {
                             return (
                                 <div
@@ -387,7 +396,7 @@ export default function CardsPage() {
                         })}
                     </div>
                     <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
-                        <b>Might:</b>{" "}
+                        <b>{i18nText("Might", language)}:</b>{" "}
                         <input
                             type="number"
                             min={0}
@@ -409,7 +418,7 @@ export default function CardsPage() {
                         />
                     </div>
                     <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
-                        <b>Energy:</b>{" "}
+                        <b>{i18nText("Energy", language)}:</b>{" "}
                         <input
                             type="number"
                             min={0}
@@ -431,7 +440,7 @@ export default function CardsPage() {
                         />
                     </div>
                     <div className="flex mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1 h-12">
-                        <b>Power:</b>{" "}
+                        <b>{i18nText("Power", language)}:</b>{" "}
                         <input
                             type="number"
                             min={0}
@@ -453,8 +462,8 @@ export default function CardsPage() {
                         />
                     </div>
                     <div className="flex flex-wrap mb-2 items-center gap-1 mx-2 shadow-lg border-2 px-2 rounded-lg py-1">
-                        {selectedKeys.map((keys, index) => {
-                            const details = KeywordDetails[keys];
+                        {selectedKeys.map((key, index) => {
+                            const details = KeywordDetails[key];
                             return (
                                 <div
                                     key={index}
@@ -465,7 +474,7 @@ export default function CardsPage() {
                                         details.color
                                     }
                                 >
-                                    {keys}
+                                    {i18nText(key, language)}
                                     <span
                                         className={
                                             "ml-2 cursor-pointer " +
@@ -478,13 +487,18 @@ export default function CardsPage() {
                                 </div>
                             );
                         })}
-                        <select className="h-10 font-bold" onChange={(v) => optionChange(v)}>
-                            <option value="none">Keyword</option>
+                        <select
+                            className="h-10 font-bold"
+                            onChange={(v) => optionChange(v)}
+                        >
+                            <option value="none">
+                                {i18nText("Keyword", language)}
+                            </option>
                             {KeywordList.map((key, index) => {
                                 return (
                                     !selectedKeys.includes(key) && (
                                         <option value={key} key={index}>
-                                            {key}
+                                            {i18nText(key, language)}
                                         </option>
                                     )
                                 );
@@ -512,7 +526,7 @@ export default function CardsPage() {
                         </button>
                     </div>
                 </div>
-                <div className="p-4 last:mx-auto justify-start">
+                <div className="col-span-8 ml-5 overflow-y-scroll" style={{"height": "calc(100vh - 66px)"}}>
                     {filteredCards?.length ? (
                         filteredCards.map((card: any) => (
                             <CardDisplay key={card.cardId} card={card} />
