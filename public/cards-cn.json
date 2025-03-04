@@ -13,7 +13,7 @@
             }
         },
         "might": 3,
-        "description": "[Ganking] （我可以向其他战场进行移动。）\n你可以从废牌堆回收一张牌，然后让我本回合[might]+1（可重复执行）。",
+        "description": "[Ganking]（我可以向其他战场进行移动。）[new line]你可以从废牌堆回收一张牌，然后让我本回合[might]+1（可重复执行）。",
         "faction": ["Piltover"],
         "keywords": [
             {
@@ -37,7 +37,7 @@
             }
         },
         "might": 3,
-        "description": "我在战斗中最后承受伤害。\n[Exhaust me]： 对任意战场中的一个敌方单位造成等同于我战力的伤害。（我必须位于战场中才能使用技能。）",
+        "description": "我在战斗中最后承受伤害。[new line][Exhaust me]： 对任意战场中的一个敌方单位造成等同于我战力的伤害。（我必须位于战场中才能使用技能。）",
         "faction": ["Piltover"],
         "runeColor": ["Calm"],
         "keywords": []
@@ -75,7 +75,7 @@
             }
         },
         "might": 5,
-        "description": "我以活跃状态进场。\n当我进攻时，摧毁此处所有已受伤的敌方单位。",
+        "description": "我以活跃状态进场。[new line]当我进攻时，摧毁此处所有已受伤的敌方单位。",
         "faction": ["Zaun", "Dog"],
         "runeColor": ["Physical"],
         "keywords": []
@@ -131,7 +131,7 @@
             }
         },
         "might": 5,
-        "description": "[Accelerate] （打出我时，你可以额外支付[energy-1][Fury]，让我以活跃状态进场。）",
+        "description": "[Accelerate]（打出我时，你可以额外支付[energy-1][Fury]，让我以活跃状态进场。）",
         "faction": ["Noxus", "Dragon"],
         "keywords": [
             {
@@ -172,7 +172,7 @@
             }
         },
         "might": 2,
-        "description": "[Assault-2] （当我是进攻方时，[might]+2）\n当你打出我时，弃置一张手牌。",
+        "description": "[Assault-2]（当我是进攻方时，[might]+2）[new line]当你打出我时，弃置一张手牌。",
         "faction": ["Zaun"],
         "keywords": [
             {
@@ -246,7 +246,7 @@
             }
         },
         "might": 2,
-        "description": "[Accelerate] （打出我时，你可以额外支付[energy-1][Fury]，让我以活跃状态进场。）",
+        "description": "[Accelerate]（打出我时，你可以额外支付[energy-1][Fury]，让我以活跃状态进场。）",
         "faction": ["Noxus", "Trifarian"],
         "keywords": [
             {
@@ -334,7 +334,7 @@
             }
         },
         "might": 4,
-        "description": "[Accelerate] （打出我时，你可以额外支付[energy-1][Fury]，让我以活跃状态进场。）\n[Assault-2] （当我是进攻方时，[might]+2。）\n当你打出我时，弃置两张牌。",
+        "description": "[Accelerate]（打出我时，你可以额外支付[energy-1][Fury]，让我以活跃状态进场。）[new line][Assault-2]（当我是进攻方时，[might]+2。）[new line]当你打出我时，弃置两张牌。",
         "faction": ["Zaun"],
         "keywords": [
             {
@@ -381,7 +381,7 @@
             }
         },
         "might": 3,
-        "description": "[Ganking] （我可以向其他战场进行移动。）\n你可以从废牌堆回收一张牌，然后让我本回合[might]+1（可重复执行）。",
+        "description": "[Ganking]（我可以向其他战场进行移动。）[new line]你可以从废牌堆回收一张牌，然后让我本回合[might]+1（可重复执行）。",
         "faction": ["Piltover"],
         "keywords": [
             {
@@ -439,7 +439,7 @@
             }
         },
         "might": 9,
-        "description": "[Deflect-2] （对手必须额外支付[rune][rune]才能将我选为法术或者技能的目标。）\n当我进攻时，对此的地方单位造成共计5点伤害，可在多名敌方单位之间分摊。",
+        "description": "[Deflect-2]（对手必须额外支付[rune][rune]才能将我选为法术或者技能的目标。）[new line]当我进攻时，对此的地方单位造成共计5点伤害，可在多名敌方单位之间分摊。",
         "faction": ["Freljord"],
         "keywords": [
             {
@@ -501,7 +501,7 @@
                 "level": 1
             }
         ],
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n无效化一个法术，但其费用不得高于[energy-4]法力或[rune]符能。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]无效化一个法术，但其费用不得高于[energy-4]法力或[rune]符能。",
         "runeColor": ["Calm"]
     },
     {
@@ -522,7 +522,7 @@
                 "level": 1
             }
         ],
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n让一名友方单位[might]+1，如果它是你在该处唯一控制的单位，则额外获得[might]+1。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]让一名友方单位[might]+1，如果它是你在该处唯一控制的单位，则额外获得[might]+1。",
         "runeColor": ["Calm"]
     },
     {
@@ -543,7 +543,7 @@
                 "level": 1
             }
         ],
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n抽一张牌。你可以让一个友方单位变为休眠状态，额外抽一张牌。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]抽一张牌。你可以让一个友方单位变为休眠状态，额外抽一张牌。",
         "runeColor": ["Calm"]
     },
     {
@@ -582,7 +582,7 @@
                 "level": 1
             }
         ],
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n让一个单位在本回合内[might]+2，然后抽一张牌。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]让一个单位在本回合内[might]+2，然后抽一张牌。",
         "runeColor": ["Calm"]
     },
     {
@@ -603,7 +603,7 @@
                 "level": 1
             }
         ],
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n无效化一个法术。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]无效化一个法术。",
         "runeColor": ["Calm"]
     },
     {
@@ -662,7 +662,7 @@
                 "count": 0
             }
         },
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n让一个单位在本回合[might]-1（不得低于1），然后抽一张牌。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]让一个单位在本回合[might]-1（不得低于1），然后抽一张牌。",
         "keywords": [
             {
                 "name": "Reaction",
@@ -724,7 +724,7 @@
                 "count": 2
             }
         },
-        "description": "[Focused] （只能在你的回合且法术对抗之外打出。）\n[Epic] （打出我时，开启法术对抗。）\n让所有友方单位变为休眠状态，然后对所有战场上的单位造成12点伤害。",
+        "description": "[Focused]（只能在你的回合且法术对抗之外打出。）[new line][Epic]（打出我时，开启法术对抗。）[new line]让所有友方单位变为休眠状态，然后对所有战场上的单位造成12点伤害。",
         "keywords": [
             {
                 "name": "Focused",
@@ -798,7 +798,7 @@
             }
         },
         "might": 6,
-        "description": "[Tank] （我在战斗中首先承担伤害。）\n当你打出我时，额外打出一张休眠的符文。",
+        "description": "[Tank]（我在战斗中首先承担伤害。）[new line]当你打出我时，额外打出一张休眠的符文。",
         "faction": ["Freljord"],
         "keywords": [
             {
@@ -866,7 +866,7 @@
                 "level": 3
             }
         ],
-        "description": "[Tank] （我在战斗中首先承担伤害。）\n[Shield-3] （当我是防守时，[might]+3）\n每当对手移动单位到一处非我所在的战场时，你抽一张牌。",
+        "description": "[Tank]（我在战斗中首先承担伤害。）[new line][Shield-3]（当我是防守时，[might]+3）[new line]每当对手移动单位到一处非我所在的战场时，你抽一张牌。",
         "faction": ["Freljord"],
         "runeColor": ["Physical"]
     },
@@ -889,7 +889,7 @@
                 "level": 1
             }
         ],
-        "description": "[Deflect] （对手必须额外支付[rune]才能将我选为法术或者技能的目标。）\n你可以将我打出到敌方控制的战场。",
+        "description": "[Deflect]（对手必须额外支付[rune]才能将我选为法术或者技能的目标。）[new line]你可以将我打出到敌方控制的战场。",
         "faction": ["Shadow Isles"],
         "runeColor": ["Physical"]
     },
@@ -916,7 +916,7 @@
                 "level": 1
             }
         ],
-        "description": "[Ganking] （我可以向其他战场进行移动。）\n[Accelerate] （打出我时，你可以额外支付[energy-1][Physical]，让我以活跃状态进场。）\n每回合一次，当我移动时，让场上另一张卡牌变为活跃状态。",
+        "description": "[Ganking]（我可以向其他战场进行移动。）[new line][Accelerate]（打出我时，你可以额外支付[energy-1][Physical]，让我以活跃状态进场。）[new line]每回合一次，当我移动时，让场上另一张卡牌变为活跃状态。",
         "faction": ["Bilgewater", "Pirate"],
         "title": "船长",
         "runeColor": ["Physical"]
@@ -967,7 +967,7 @@
                 "count": 0
             }
         },
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n让一个不高于3[might]的单位返回其所属的手牌。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]让一个不高于3[might]的单位返回其所属的手牌。",
         "keywords": [
             {
                 "name": "Reaction",
@@ -1069,7 +1069,7 @@
                 "level": 1
             }
         ],
-        "description": "[Ganking] （我可以向其他战场进行移动。）\n在本回合内，如果我一动了两次，则我免疫伤害。",
+        "description": "[Ganking]（我可以向其他战场进行移动。）[new line]在本回合内，如果我一动了两次，则我免疫伤害。",
         "faction": ["Ionia"],
         "title": "巨镰奔场",
         "runeColor": ["Chaotic"]
@@ -1088,7 +1088,7 @@
         },
         "might": 4,
         "keywords": [{ "name": "Tank", "level": 1 }],
-        "description": "[Tank] （我在战斗中首先承担伤害。）\n当你打出我时，将一个单位从战场上移动到其所属的基地。",
+        "description": "[Tank]（我在战斗中首先承担伤害。）[new line]当你打出我时，将一个单位从战场上移动到其所属的基地。",
         "faction": ["Bilgewater", "Pirate"],
         "runeColor": ["Chaotic"]
     },
@@ -1107,7 +1107,7 @@
         },
         "might": 1,
         "faction": ["Bandle City", "Yordle"],
-        "description": "[Hidden] （你可以支付[rune]将这张卡牌正面朝下放在你控制的战场上，并在之后的回合支付[energy-0]法力来打出，以作应对。）\n当你打出我时，让我本回合内[might]+3。",
+        "description": "[Hidden]（你可以支付[rune]将这张卡牌正面朝下放在你控制的战场上，并在之后的回合支付[energy-0]法力来打出，以作应对。）[new line]当你打出我时，让我本回合内[might]+3。",
         "keywords": [
             {
                 "name": "Hidden",
@@ -1216,7 +1216,7 @@
                 "count": 1
             }
         },
-        "description": "[Focused] （只能在你的回合且法术对抗之外打出。）\n每名玩家选择并摧毁一个自己的单位。",
+        "description": "[Focused]（只能在你的回合且法术对抗之外打出。）[new line]每名玩家选择并摧毁一个自己的单位。",
         "faction": [],
         "keywords": [
             {
@@ -1256,7 +1256,7 @@
                 "count": 1
             }
         },
-        "description": "[Hidden] （你可以支付[rune]将这张卡牌正面朝下放在你控制的战场上，并在之后的回合支付[energy-0]法力来打出，以作应对。）\n摧毁战场中的一个单位，然后让其所属的玩家抽两张牌。",
+        "description": "[Hidden]（你可以支付[rune]将这张卡牌正面朝下放在你控制的战场上，并在之后的回合支付[energy-0]法力来打出，以作应对。）[new line]摧毁战场中的一个单位，然后让其所属的玩家抽两张牌。",
         "keywords": [
             {
                 "name": "Hidden",
@@ -1446,7 +1446,7 @@
                 "level": 1
             }
         ],
-        "description": "[Focused] （只能在你的回合且法术对抗之外打出。）\n[Epic] （打出我时，开启法术对抗。）\n选择基地中的一个友方单位，对任意一个战场上的所有敌方单位造成等同于该友军单位战力的伤害，然后将该友军单位移动到此战场。",
+        "description": "[Focused]（只能在你的回合且法术对抗之外打出。）[new line][Epic]（打出我时，开启法术对抗。）[new line]选择基地中的一个友方单位，对任意一个战场上的所有敌方单位造成等同于该友军单位战力的伤害，然后将该友军单位移动到此战场。",
         "champion": "沃利贝尔",
         "runeColor": ["Fury", "Physical"]
     },
@@ -1474,7 +1474,7 @@
                 "count": 2
             }
         },
-        "description": "[Focused] （只能在你的回合且法术对抗之外打出。）\n对场上任意位置的一个单位造成5点伤害。\n每当你得分时，你可以弃置一张手牌，让我从废弃堆返回你的手牌。",
+        "description": "[Focused]（只能在你的回合且法术对抗之外打出。）[new line]对场上任意位置的一个单位造成5点伤害。[new line]每当你得分时，你可以弃置一张手牌，让我从废弃堆返回你的手牌。",
         "keywords": [
             {
                 "name": "Focused",
@@ -1535,7 +1535,7 @@
                 "count": 1
             }
         },
-        "description": "[Reaction] （可跟在对手的法术或者技能后打出，以作应对。）\n选择一个战场，让该处所有的友方单位[might]+1，而敌方单位[might]-1（不得低于1）。",
+        "description": "[Reaction]（可跟在对手的法术或者技能后打出，以作应对。）[new line]选择一个战场，让该处所有的友方单位[might]+1，而敌方单位[might]-1（不得低于1）。",
         "keywords": [
             {
                 "name": "Reaction",

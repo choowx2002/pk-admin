@@ -134,11 +134,12 @@ const keywordMap = rawKeywordMap as Record<string, string>;
 
 export const replaceKeywords = (text: string) => {
   return text.split(/\[([^\]]+)\]/g).map((part, index) => {
+    console.log(part);
     if (keywordMap[part]) {
       return (
-        `<span key={${index}} dangerouslySetInnerHTML={{ __html: ${keywordMap[part]} }} />`
+        `${keywordMap[part]}`
       );
     }
-    return `<span key={${index}}>{${part}}</span>`;
-  });
+    return `<span>${part.trim()}</span>`;
+  }).join("");
 };

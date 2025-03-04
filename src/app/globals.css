@@ -5,24 +5,40 @@
   --foreground: #171717;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+@font-face {
+  font-family: 'BeaufortforLOLJa';
+  src: url('/fonts/BeaufortforLOLJa-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
-/* body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+@layer utilities {
+  .scrollbar-transparent::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-transparent::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-transparent::-webkit-scrollbar-thumb {
+    background: rgba(44, 44, 44, 0.7); /* 半透明滚动条 */
+    border-radius: 4px;
+  }
+
+
+}
+
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--background);
+  /* background-image: url("/bg.jpg");
+  background-size: cover;
+  background-position: center; */
   color: var(--foreground);
 }
 
@@ -41,20 +57,6 @@ input:focus, textarea:focus, select:focus {
   filter: brightness(0) invert(1);
 }
 
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .animated-card-bg {
-  background: linear-gradient(120deg, #064d5b, #0a9396, #94d2bd, #0a9396, #064d5b);
-  background-size: 200% 200%;
-  animation: gradientFlow 10s infinite linear;
+  background: linear-gradient(120deg, #021c22, #0a9396, #021c22);
 }

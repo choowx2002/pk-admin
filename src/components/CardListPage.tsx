@@ -6,10 +6,9 @@ import {
     CardType,
     CardTypes,
     languageOption,
-    LanguageOptions,
     Powers,
     PowerType,
-    runeColors,
+    runeColorsCss,
 } from "@/types/constant";
 import { useRouter } from "next/navigation";
 import { KeywordDetails, KeywordList, KeywordType } from "@/types/keywords";
@@ -309,11 +308,15 @@ export default function CardsPage() {
                             return (
                                 <div
                                     key={rune}
-                                    className={
-                                        "shadow-lg rounded-4xl h-min overflow-hidden border-2 " +
-                                        (selectedRunes.includes(rune)
-                                            ? runeColors[rune]
-                                            : "")
+                                    className="shadow-lg rounded-4xl h-min overflow-hidden border-2 "
+                                    style={
+                                        selectedRunes.includes(rune)
+                                            ? {
+                                                  background:
+                                                      runeColorsCss[rune] ??
+                                                      "black",
+                                              }
+                                            : {}
                                     }
                                 >
                                     <img
@@ -488,7 +491,7 @@ export default function CardsPage() {
                             );
                         })}
                         <select
-                            className="h-10 font-bold"
+                            className="h-10 font-bold flex-1"
                             onChange={(v) => optionChange(v)}
                         >
                             <option value="none">
@@ -526,7 +529,10 @@ export default function CardsPage() {
                         </button>
                     </div>
                 </div>
-                <div className="col-span-8 ml-5 overflow-y-scroll" style={{"height": "calc(100vh - 66px)"}}>
+                <div
+                    className="col-span-8 ml-5 overflow-y-scroll scrollbar-transparent"
+                    style={{ height: "calc(100vh - 66px)" }}
+                >
                     {filteredCards?.length ? (
                         filteredCards.map((card: any) => (
                             <CardDisplay key={card.cardId} card={card} />
